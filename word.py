@@ -17,12 +17,12 @@ def save_words(words):
 # 加载现有的单词
 words = load_words()
 
-st.title("Word Saver")
+st.title("Note Saver")
 
 # 输入单词的表单
-new_word = st.text_input("Enter a word:")
+new_word = st.text_input("Enter a note:")
 
-if st.button("Save Word"):
+if st.button("Save note"):
     if new_word:
         words.append(new_word)
         save_words(words)
@@ -30,6 +30,6 @@ if st.button("Save Word"):
         st.experimental_rerun()  # 重新运行以刷新页面并显示新单词
 
 # 显示所有保存的单词
-st.header("Saved Words")
+st.header("Saved Notes")
 for word in words:
     st.write(f"- {word}")
